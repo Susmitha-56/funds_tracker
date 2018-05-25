@@ -1,0 +1,23 @@
+<html ng-app="notesApp">
+<head><title>Notes App</title></head>
+<body ng-controller="MainCtrl as ctr">
+<h2 style="color:blue">{{ctr.helloMsg}} Susmitha</h2>
+<br/>
+<h2 style="color:red">{{ctr.goodbyeMsg}} Susmitha</h2>
+
+<script
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+</script>
+<script type="text/javascript">
+angular.module('notesApp', [])
+.controller('MainCtrl', [function() {
+this.helloMsg = 'Hello ';
+this.goodbyeMsg = 'Goodbye ';
+}]);
+</script>
+</body>
+</html>
+<!--local variables inside the controller cannot be acceseed for example if we define goodbye as var 
+inside the controller we cant acceess.Anything that the user needs to see, or the HTML needs to use, needs to be defined on
+this. Anything that the HTML does not directly access should not be put on this, but
+should rather be saved as local variables in the controller’s scope, similar to goodbyeMsg.-->
